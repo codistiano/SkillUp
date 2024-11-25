@@ -1,0 +1,181 @@
+:root {
+  /* Dark Mode Variables */
+  --dark-bg: #1c1c1e;
+  --dark-text: #e5e5e5;
+  --accent: #5c4dff;
+  --cta-hover: #4338ca;
+
+  /* Light Mode Variables */
+  --light-bg: #fefefe;
+  --light-text: #1c1c1e;
+  --accent-light: #ff6f61;
+  --cta-hover-light: #e35b4f;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Light Mode */
+body.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Header Styles */
+header {
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+header h1 span {
+  color: inherit;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  display: inline;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+header ul li a:hover {
+  color: var(--accent);
+}
+
+#toggleTheme {
+  background: var(--accent);
+  color: var(--dark-text);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+body.light #toggleTheme {
+  background: var(--accent);
+  color: var(--dark-text);
+}
+
+#toggleTheme:hover {
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+main {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 300px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 900px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+body.dark .hero-text h2 {
+  color: var(--accent);
+}
+
+body.light .hero-text h2 {
+  color: var(--accent);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-text button {
+  background: var(--accent);
+  color: var(--dark-text);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+body.light .hero-text button {
+  background: var(--accent);
+  color: var(--dark-text);
+}
+
+.hero-text button:hover {
+  transform: scale(1.05);
+}
+
+.hero-image {
+  flex: 1;
+  background: url("./hero-img.png") no-repeat center/cover;
+  width: 100%;
+  height: 400px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 50px;
+  transition: color 0.3s;
+}
+
+body.light footer {
+  color: var(--light-text);
+}

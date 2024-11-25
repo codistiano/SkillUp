@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillUp Registration</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="themeToggle">Switch to Light Mode</button>
+  </div>
+  <div class="container">
+    <header>
+      <h1>SkillUp Registration</h1>
+      <p>Create your tailored learning path in just a few steps.</p>
+    </header>
+    
+    <div id="form-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      
+      <form id="multiStepForm">
+        <!-- Step 1 -->
+        <div class="form-step active">
+          <h2>Step 1: Basic Information</h2>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Enter your age" required>
+          
+          <button type="button" class="next-btn">Next</button>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="form-step">
+          <h2>Step 2: Rate Your Skills</h2>
+          <label>Programming</label>
+          <input type="range" min="1" max="5" step="1" id="programmingSkill">
+          <div class="slider-value" id="programmingValue">3</div>
+          
+          <label>Design</label>
+          <input type="range" min="1" max="5" step="1" id="designSkill">
+          <div class="slider-value" id="designValue">3</div>
+          
+          <label>Communication</label>
+          <input type="range" min="1" max="5" step="1" id="communicationSkill">
+          <div class="slider-value" id="communicationValue">3</div>
+          
+          <button type="button" class="prev-btn">Back</button>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="form-step">
+          <h2>Step 3: Your Goals</h2>
+          <label for="goals">What do you want to achieve?</label>
+          <textarea id="goals" placeholder="Describe your learning goals" required></textarea>
+          
+          <button type="button" class="prev-btn">Back</button>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+      <div id="successMessage" class="hidden">
+        <h2>Registration Successful!</h2>
+        <p>Thank you for registering with SkillUp. We'll contact you shortly with your personalized learning plan.</p>
+        <button onclick="resetForm()">Start Again</button>
+        <button onclick="goToHome()">Go to Home</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts.js"></script>
+  <script>
+    function goToHome() {
+      window.location.href = 'index.html'; 
+    }
+  </script>
+</body>
+</html>
